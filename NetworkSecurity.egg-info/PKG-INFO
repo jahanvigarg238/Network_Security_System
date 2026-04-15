@@ -10,6 +10,7 @@ Requires-Dist: pymongo
 Requires-Dist: scikit-learn
 Requires-Dist: matplotlib
 Requires-Dist: certifi
+Requires-Dist: pymongo[srv]==3.12
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist
