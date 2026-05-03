@@ -42,7 +42,7 @@ class DataIngestion:
             
             df.replace({"na":np.nan},inplace=True)
             return df
-        except Exception as e:
+        except Exception:
             raise NetworkSecurityException
         
     def export_data_into_feature_store(self,dataframe: pd.DataFrame):
@@ -60,7 +60,9 @@ class DataIngestion:
     def split_data_as_train_test(self,dataframe: pd.DataFrame):
         try:
             train_set, test_set = train_test_split(
-                dataframe, test_size=self.data_ingestion_config.train_test_split_ratio
+                dataframe,
+                test_size=self.data_ingestion_config.train_test_split_ratio,
+                random_state=42,
             )
             logging.info("Performed train test split on the dataframe")
 
@@ -72,7 +74,7 @@ class DataIngestion:
             
             os.makedirs(dir_path, exist_ok=True)
             
-            logging.info(f"Exporting train and test file path.")
+            logging.info(f"{'Exporting train and test file path.'}")
             
             train_set.to_csv(
                 self.data_ingestion_config.training_file_path, index=False, header=True
@@ -81,7 +83,7 @@ class DataIngestion:
             test_set.to_csv(
                 self.data_ingestion_config.testing_file_path, index=False, header=True
             )
-            logging.info(f"Exported train and test file path.")
+            logging.info(f"{'Exported train and test file path.'}")
 
             
         except Exception as e:
