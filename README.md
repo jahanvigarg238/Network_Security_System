@@ -1,4 +1,4 @@
-# 🔐 Network Security System — Phishing Website Detection
+# 🔐 Phishing Website Detection
 
 An end-to-end **MLOps pipeline** for detecting phishing websites using classical ML models, with full experiment tracking via MLflow + DagsHub and data storage on MongoDB Atlas.
 
