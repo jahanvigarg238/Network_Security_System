@@ -25,6 +25,7 @@ networksecurity/pipeline/__init__.py
 networksecurity/pipeline/batch_prediction.py
 networksecurity/pipeline/training_pipeline.py
 networksecurity/utils/__init__.py
+networksecurity/utils/url_feature_extractor.py
 networksecurity/utils/main_utils/__init__.py
 networksecurity/utils/main_utils/utils.py
 networksecurity/utils/ml_utils/__init__.py
